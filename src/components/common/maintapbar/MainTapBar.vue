@@ -72,7 +72,7 @@ export default {
   color:white;
   flex:1;
   text-align: center;
-  padding-top: 5px;
+  padding-top: 10px;
   padding-bottom: 10px;
 }
 .tapbar-item:active{
