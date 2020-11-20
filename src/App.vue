@@ -7,7 +7,7 @@
 <script>
 
 
-import MainTapBar from "./components/maintapbar/MainTapBar";
+import MainTapBar from "./components/common/maintapbar/MainTapBar";
 export default {
   name: "App",
   components: {MainTapBar},
