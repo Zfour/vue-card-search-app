@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
 const Home = () => import('../views/home/Home')
 const Card = () => import('../views/card/Card')
 const Game = () => import('../views/game/Game')

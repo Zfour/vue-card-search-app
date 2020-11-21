@@ -1,58 +1,59 @@
 @import "./normalize.css";
 
 body {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
+  background-color: #f6f6f6;
 }
 
 :root {
-    --color-text: #666;
-    --color-high-text: #bbe300;
-    --color-tint: #d1e39e;
-    --color-bg: #fff;
-    --font-size: 14px;
-    --line-height: 1.5;
+  --color-text: #666;
+  --color-high-text: #bbe300;
+  --color-tint: #d1e39e;
+  --color-bg: #fff;
+  --font-size: 14px;
+  --line-height: 1.5;
 }
 
 /*初始化布局*/
 *, /*:before是Css2的写法，::before是Css3的写法*/
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Microsoft YaheiUI", "Microsoft Yahei", SimHei, "\5B8B\F53", simsun, sans-serif;
-    user-select: none; /*禁止鼠标选中文字和图片*/
-    -webkit-tap-highlight-color: transparent; /*webkit是苹果浏览器引擎，点击高亮颜色*/
-    width: 100vw; /*宽度相当于窗口大小*/
+  font-family: "PingFang SC", "Helvetica Neue", Helvetica, Arial, "Microsoft YaheiUI", "Microsoft Yahei", SimHei, "\5B8B\F53", simsun, sans-serif;
+  user-select: none; /*禁止鼠标选中文字和图片*/
+  -webkit-tap-highlight-color: transparent; /*webkit是苹果浏览器引擎，点击高亮颜色*/
+  width: 100vw; /*宽度相当于窗口大小*/
 }
 
 a {
-    color: var(--color-high-text); /*使用某个变量*/
-    text-decoration: none;
+  color: var(--color-high-text); /*使用某个变量*/
+  text-decoration: none;
 }
 
 .clean-fix::after { /*清除浮动*/
-    content: "";
-    display: block;
-    visibility: hidden;
-    height: 0;
-    width: 0;
-    clear: both;
+  content: "";
+  display: block;
+  visibility: hidden;
+  height: 0;
+  width: 0;
+  clear: both;
 }
 
 .clean-fix {
-    zoom: 1;
+  zoom: 1;
 }
 
 .left {
-    float: left;
+  float: left;
 }
 
 .right {
-    float: right;
+  float: right;
 }
 

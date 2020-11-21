@@ -7,18 +7,17 @@
 <script>
 
 
-import MainTapBar from "./components/common/maintapbar/MainTapBar";
-export default {
-  name: "App",
-  components: {MainTapBar},
-  data() {
-    return {
+  import MainTapBar from "./components/common/maintapbar/MainTapBar";
 
+  export default {
+    name: "App",
+    components: {MainTapBar},
+    data() {
+      return {}
     }
   }
-}
 </script>
 <style>
-@import "./assets/css/base.css";
+  @import "./assets/css/base.css";
 
 </style>

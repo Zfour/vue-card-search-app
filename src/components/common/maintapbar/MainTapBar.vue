@@ -29,8 +29,8 @@
       </div>
     </tapbar-item>
     <tapbar-item path="/profile" activeColor="black">
-      <img   slot="itemactive" class="tapbar-img" src="./tapbaricon/black/profile.png">
-      <img   slot="itemdeactive" class="tapbar-img" src="./tapbaricon/white/profile.png">
+      <img slot="itemactive" class="tapbar-img" src="./tapbaricon/black/profile.png">
+      <img slot="itemdeactive" class="tapbar-img" src="./tapbaricon/white/profile.png">
       <div class="tapbar-name" slot="itemname">
         用户
       </div>
@@ -39,47 +39,52 @@
 </template>
 
 <script>
-import TapBar from "./tapbar/Tapbar";
-import TapbarItem from "./tapbar/TapbarItem";
+  import TapBar from "./tapbar/Tapbar";
+  import TapbarItem from "./tapbar/TapbarItem";
 
-export default {
-  name: "MainTapBar",
-  components: {TapBar, TapbarItem}
-}
+  export default {
+    name: "MainTapBar",
+    components: {TapBar, TapbarItem}
+  }
 </script>
 
 <style scoped>
-.tapbar-img{
-  width:20px;
-  height: 20px;
-}
-.tapbar-name{
-  margin-top:-3px;
-  font-size:0.1em;
-}
-#tap-bar{
-  height: 49px;
-  display: flex;
-  background-color: #000000;
-  box-shadow: 0px -1px #0000002e;
-  position: fixed;
-  right:0;
-  left:0;
-  bottom: 0;
-}
-.tapbar-item{
+  .tapbar-img {
+    width: 20px;
+    height: 20px;
+  }
 
-  color:white;
-  flex:1;
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.tapbar-item:active{
-  background-color: white;
+  .tapbar-name {
+    margin-top: -3px;
+    font-size: 0.1em;
+  }
 
-}
-.isactive{
-  background-color: white;
-}
+  #tap-bar {
+    height: 49px;
+    display: flex;
+    background-color: #000000;
+    box-shadow: 0px -1px #0000002e;
+    position: fixed;
+    right: 0;
+    left: 0;
+    bottom: 0;
+  }
+
+  .tapbar-item {
+
+    color: white;
+    flex: 1;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .tapbar-item:active {
+    background-color: white;
+
+  }
+
+  .isactive {
+    background-color: white;
+  }
 </style>

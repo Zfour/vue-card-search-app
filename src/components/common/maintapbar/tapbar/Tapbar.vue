@@ -1,21 +1,19 @@
 <template>
   <div id="tap-bar">
-<slot></slot>
+    <slot></slot>
   </div>
 </template>
 
 <script>
 
 
-export default {
-  name: "Tapbar",
+  export default {
+    name: "Tapbar",
 
-  data(){
-   return{
-
-   }
+    data() {
+      return {}
+    }
   }
-}
 </script>
 
 <style scoped>
