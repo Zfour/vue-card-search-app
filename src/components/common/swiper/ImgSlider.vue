@@ -58,7 +58,10 @@
   height:100%;
 }
 .banner {
-  margin-top: 44px;
+  box-shadow:0 2px 5px 0 rgba(102, 102, 102, 0.2);
+  margin:10px;
+  margin-top: 54px;
+  border-radius: 8px;
   height: 560px;
   overflow: hidden;
   display: flex;

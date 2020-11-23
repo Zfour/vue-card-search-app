@@ -1,10 +1,12 @@
 import {request} from "./request";
-export function getHomeMutidata() {
+export function getNewsMutidata(type,page) {
  return request({
-    url:"https://www.mxnzp.com/api/image/girl/list/random",
+    url:"https://www.mxnzp.com/apinews/list",
     params:{
       app_id:"tkilvmkqykbpjode",
       app_secret:"",
+      typeId:type,
+      page:page
     }
   })
 }
