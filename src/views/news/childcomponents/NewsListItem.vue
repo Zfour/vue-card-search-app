@@ -2,7 +2,7 @@
 <div class="news-list-item">
   <p class="new-list-time">{{listdataitem.postTime}}</p>
   <div class="news-cell">
-    <img :src="listdataitem.imgList[0]" @load="imageLoad">
+    <img :src="listdataitem.imgList[0]" @load="imageLoad()">
     <p class="new-list-title">{{listdataitem.title}}</p>
   </div>
 </div>
@@ -14,7 +14,7 @@
       props:['listdataitem'],
       methods:{
         imageLoad() {
-          this.$bus.$emit('itemImageLoad')
+          this.$emit('itemImageLoad')
         }
       }
     }

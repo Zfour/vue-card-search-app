@@ -1,6 +1,6 @@
 <template>
 <div class="news-list">
-    <news-list-item :key="index" v-for="(item,index) in listdata" :listdataitem="item"></news-list-item>
+    <news-list-item :key="index" v-for="(item,index) in listdata" :listdataitem="item" @itemImageLoad="pushItemImageLoad"></news-list-item>
 </div>
 </template>
 
@@ -9,7 +9,12 @@
     export default {
         name: "NewsList",
       components: {NewsListItem},
-      props:['listdata']
+      props:['listdata'],
+      methods:{
+        pushItemImageLoad(){
+          this.$emit('finalPushItemImageLoad')
+        }
+      }
     }
 </script>
 

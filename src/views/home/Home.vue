@@ -1,7 +1,7 @@
 <template>
   <div class="home">
   <nav-bar><div slot="center">醉梦传说助手</div></nav-bar>
-    <scroll class="home-scroll" ref="homescroll">
+    <scroll class="home-scroll">
     <img-slider :cresult="result"></img-slider>
     <div class="main-content">
     <version></version>
