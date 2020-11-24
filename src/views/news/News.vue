@@ -6,9 +6,10 @@
    <div class="news-nav-post-control">
      <tab-control @tabclick="tabclick" :titles="['公告','活动','版本']"></tab-control>
    </div>
-    <div>
+    <scroll class="news-list-scroll" ref="listscroll">
       <news-list :listdata="switchtype"></news-list>
-    </div>
+    </scroll>
+    <back-to-top @click.native="backtotop"></back-to-top>
   </div>
 </template>
 
@@ -17,10 +18,12 @@
   import TabControl from "../../components/cotent/tabcontrol/TabControl";
   import NavBar from "../../components/common/navbar/NavBar";
   import NewsList from "./childcomponents/NewsList";
+  import BackToTop from "../../components/cotent/backtotop/BackToTop";
+  import Scroll from "../../components/common/scroll/Scroll";
 
   export default {
     name: "News",
-    components: {NewsList, NavBar, TabControl},
+    components: {Scroll, BackToTop, NewsList, NavBar, TabControl},
     data(){
       return{
         currenttype:'notice',
@@ -36,12 +39,21 @@
       this.getNewsData('activity');
       this.getNewsData('release');
     },
+    mounted() {
+      this.$bus.$on('itemImageLoad', () => {
+        this.$refs.listscroll.Scroll.refresh()
+      })
+    },
     computed:{
      switchtype(){
       return  this.newslist[this.currenttype].list
      }
     },
     methods:{
+      backtotop(){
+  this.$refs.listscroll.Scroll.scrollTo(0,0,500);
+        console.log(this.$refs.listscroll.Scroll)
+      },
       tabclick(index){
 switch (index) {
   case 0:
@@ -73,8 +85,20 @@ this.currenttype = 'notice'
 
 <style scoped>
 .news-nav-post-control{
-  position:sticky;
-  top:44px;
+  position:fixed;
+  top:0;
+  left: 0;
+  right: 0;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.1);
+  z-index: 10;
 }
+  .news-list-scroll{
+  margin:10px 0px 50px 0px;
+  position: fixed;
+  right: 0;
+  left:0;
+  top:92px;
+  bottom: 49px;
+    z-index: -1;
+  }
 </style>

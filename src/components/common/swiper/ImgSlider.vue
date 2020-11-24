@@ -2,7 +2,7 @@
   <swiper  class="banner" ref="mySwiper" :options="swiperOptions">
     <swiper-slide v-for="(image,index)  in cresult" :key="index">
 <a :link="image.imageUrl">
-  <img class="slider-img" :src="image.imageUrl" alt="">
+  <img class="slider-img" :src="image.imageUrl" alt="" >
 </a>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -60,7 +60,6 @@
 .banner {
   box-shadow:0 2px 5px 0 rgba(102, 102, 102, 0.2);
   margin:10px;
-  margin-top: 54px;
   border-radius: 8px;
   height: 560px;
   overflow: hidden;

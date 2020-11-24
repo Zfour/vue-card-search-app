@@ -58,7 +58,7 @@
     justify-content: space-between;
     flex-wrap:wrap;
     text-align: center;
-    margin-bottom:70px;
+    margin-bottom:20px;
     margin-left: 10px;
     margin-right: 10px;
   }

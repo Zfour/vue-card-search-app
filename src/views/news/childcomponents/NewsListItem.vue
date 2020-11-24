@@ -2,7 +2,7 @@
 <div class="news-list-item">
   <p class="new-list-time">{{listdataitem.postTime}}</p>
   <div class="news-cell">
-    <img :src="listdataitem.imgList[0]">
+    <img :src="listdataitem.imgList[0]" @load="imageLoad">
     <p class="new-list-title">{{listdataitem.title}}</p>
   </div>
 </div>
@@ -11,7 +11,12 @@
 <script>
     export default {
         name: "NewsListItem",
-      props:['listdataitem']
+      props:['listdataitem'],
+      methods:{
+        imageLoad() {
+          this.$bus.$emit('itemImageLoad')
+        }
+      }
     }
 </script>
 
@@ -26,9 +31,10 @@
   .new-list-time{
     color: #cccccc;
     font-size: 14px;
+    margin-top: 20px;
   }
   .news-cell{
-   margin: 10px 10px 40px 10px;
+   margin: 10px 10px 20px 10px;
     box-shadow:0 2px 5px 0 rgba(102, 102, 102, 0.2);
     border-radius: 8px;
   }
