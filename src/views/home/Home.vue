@@ -1,8 +1,8 @@
 <template>
   <div class="home">
   <nav-bar><div slot="center">醉梦传说助手</div></nav-bar>
-    <scroll class="home-scroll">
-    <img-slider :cresult="result"></img-slider>
+    <scroll class="home-scroll" ref="homescroll">
+    <img-slider :cresult="result" ref="imageslider" @sliderImageLoadSuccess="refreshscroll"></img-slider>
     <div class="main-content">
     <version></version>
     <home-menu></home-menu>
@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import {getHomeMutidata} from "../../network/home";
+  import {getHomeMutidata} from "@/network/home";
   import NavBar from "../../components/common/navbar/NavBar";
   import ImgSlider from "../../components/common/swiper/ImgSlider";
   import Version from "../../components/cotent/version/Verson";
@@ -23,15 +23,35 @@
   export default {
     name: "Home",
     components: {Scroll, HomeMenu, Version, ImgSlider, NavBar},
-    data(){
-      return {
-        result:null
+    mounted() {
+    },
+    methods:{
+      refreshscroll(){
+        this.$refs.homescroll.Refresh()
       }
     },
+    data(){
+      return {
+        result:[],
+        results:[],
+      }
+    },
+    activated() {
+      this.result = this.results
+     // this.$refs.imageslider.start()
+      //console.log(this.$refs.imageslider.$refs.mySwiper.$swiper.autoplay.start())
+    },
+    deactivated() {
+     // this.$refs.imageslider.stop()
+      this.result = []
+    },
+
     created() {
       getHomeMutidata().then(
         results => {
-          this.result = results.data
+          this.results = results.data
+          this.result = this.results
+          console.log(this.result)
         }
       )
     },
@@ -40,7 +60,7 @@
 
 <style scoped>
   .home-scroll{
-    margin:10px 0px 10px 0px;
+    margin:10px 0 10px 0;
     position: fixed;
     right: 0;
     left:0;

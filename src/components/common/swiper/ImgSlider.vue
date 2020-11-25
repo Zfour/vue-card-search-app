@@ -1,8 +1,8 @@
 <template>
-  <swiper  class="banner" ref="mySwiper" :options="swiperOptions">
-    <swiper-slide v-for="(image,index)  in cresult" :key="index">
+  <swiper  v-if="cresult.length" class="banner" ref="mySwiper" :options="swiperOptions">
+    <swiper-slide v-for="(image,index)  in cresult" :key="index"  >
 <a :link="image.imageUrl">
-  <img class="slider-img" :src="image.imageUrl" alt="" >
+  <img class="slider-img" :src="image.imageUrl" alt="" @load="sliderImageLoad()" >
 </a>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -40,14 +40,25 @@
           }
         }
       },
+      methods:{
+        sliderImageLoad(){
+          this.$emit("sliderImageLoadSuccess")
+        }
+        //   start(){
+        //     this.swiper.autoplay.start()
+        //   },
+        // stop(){
+        //   this.swiper.$swiper.autoplay.stop()
+        // }
+      },
       computed: {
         swiper() {
-          return this.$refs.mySwiper.$swiper
+            //return this.$refs.mySwiper.$swiper
         }
       },
       mounted() {
-        //console.log('Current Swiper instance object', this.swiper)
-        this.swiper.slideTo(1, 1000, false)
+        console.log('Current Swiper instance object', this.swiper)
+        //this.swiper.slideTo(0, 1000, false)
       }
     }
 </script>
