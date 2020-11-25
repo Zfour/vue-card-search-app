@@ -14,18 +14,18 @@
         新闻
       </div>
     </tapbar-item>
-    <tapbar-item path="/game" activeColor="black">
-      <img slot="itemactive" class="tapbar-img" src="./tapbaricon/black/game.png">
-      <img slot="itemdeactive" class="tapbar-img" src="./tapbaricon/white/game.png">
-      <div class="tapbar-name" slot="itemname">
-        对局
-      </div>
-    </tapbar-item>
     <tapbar-item path="/card" activeColor="black">
       <img slot="itemactive" class="tapbar-img" src="./tapbaricon/black/details.png">
       <img slot="itemdeactive" class="tapbar-img" src="./tapbaricon/white/details.png">
       <div class="tapbar-name" slot="itemname">
         牌库
+      </div>
+    </tapbar-item>
+    <tapbar-item path="/game" activeColor="black">
+      <img slot="itemactive" class="tapbar-img" src="./tapbaricon/black/game.png">
+      <img slot="itemdeactive" class="tapbar-img" src="./tapbaricon/white/game.png">
+      <div class="tapbar-name" slot="itemname">
+        对局
       </div>
     </tapbar-item>
     <tapbar-item path="/profile" activeColor="black">
@@ -63,7 +63,7 @@
     height: 49px;
     display: flex;
     background-color: #000000;
-    box-shadow: 0px -1px #0000002e;
+    box-shadow: 0px -1px rgba(0, 0, 0, 0.05);
     position: fixed;
     right: 0;
     left: 0;

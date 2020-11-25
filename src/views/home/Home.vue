@@ -14,6 +14,7 @@
 
 <script>
   import {getHomeMutidata} from "@/network/home";
+  import {getPictureMutidata} from "@/network/picture";
   import NavBar from "../../components/common/navbar/NavBar";
   import ImgSlider from "../../components/common/swiper/ImgSlider";
   import Version from "../../components/cotent/version/Verson";
@@ -34,6 +35,8 @@
       return {
         result:[],
         results:[],
+        aniresult:[],
+        aniresults:[],
       }
     },
     activated() {
@@ -47,13 +50,22 @@
     },
 
     created() {
-      getHomeMutidata().then(
-        results => {
-          this.results = results.data
-          this.result = this.results
-          console.log(this.result)
-        }
-      )
+      for (let i = 0; i < 5; i++) {
+        getPictureMutidata().then(
+          results => {
+           // console.log(results.imgurl)
+            this.result.push(results.imgurl)
+            //console.log(this.result)
+          })
+        this.results = this.result
+      }
+      // getHomeMutidata().then(  //三次元美女图片
+      //   results => {
+      //     this.results = results.data
+      //     this.result = this.results
+      //     console.log(this.result)
+      //   }
+      // )
     },
   }
 </script>

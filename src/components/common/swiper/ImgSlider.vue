@@ -1,8 +1,8 @@
 <template>
   <swiper  v-if="cresult.length" class="banner" ref="mySwiper" :options="swiperOptions">
     <swiper-slide v-for="(image,index)  in cresult" :key="index"  >
-<a :link="image.imageUrl">
-  <img class="slider-img" :src="image.imageUrl" alt="" @load="sliderImageLoad()" >
+<a :link="image">
+  <img class="slider-img" :src="image" alt="" @load="sliderImageLoad()" >
 </a>
     </swiper-slide>
     <div class="swiper-pagination" slot="pagination"></div>
@@ -67,6 +67,7 @@
 .slider-img{
   width:100vw;
   height:100%;
+  object-fit: cover;
 }
 .banner {
   box-shadow:0 2px 5px 0 rgba(102, 102, 102, 0.2);
