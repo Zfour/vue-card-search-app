@@ -55,21 +55,11 @@
       }
     },
     methods: {
-      debounce(func, delay) {
-        let timer = null
-        return function (...args) {
-          if (timer) clearTimeout(timer)
-          timer = setTimeout(() => {
-            func.apply(this,args)
-          }, delay)
-        }
-      },
       loadmore() {
         this.getNewsData(this.currenttype)
       },
       refresh() {
-        const refreshde = this.debounce(this.$refs.listscroll.Refresh,500)
-        refreshde()
+        this.$refs.listscroll.Refresh()
       },
       contentscroll(position) {
         this.backtotopdisplay = -position.y > 900
