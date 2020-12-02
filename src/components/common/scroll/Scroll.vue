@@ -28,6 +28,7 @@
       Refresh(){
         this.Scroll.refresh()
         console.log('执行！')
+
       }
     },
     data() {
@@ -36,8 +37,10 @@
       }
     },
     mounted() {
-
+      console.log('111111')
       this.Scroll = new BScroll(this.$refs.scrollwrapper, {
+        click: true,
+        touch:true,
         probeType: this.probeType,
         pullUpLoad: this.pullUpLoad,
       })

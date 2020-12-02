@@ -20,12 +20,11 @@
   import Version from "../../components/cotent/version/Verson";
   import HomeMenu from "../../components/cotent/homemenu/HomeMenu";
   import Scroll from "../../components/common/scroll/Scroll";
+  import BScroll from "better-scroll";
 
   export default {
     name: "Home",
     components: {Scroll, HomeMenu, Version, ImgSlider, NavBar},
-    mounted() {
-    },
     methods:{
       refreshscroll(){
         this.$refs.homescroll.Refresh()

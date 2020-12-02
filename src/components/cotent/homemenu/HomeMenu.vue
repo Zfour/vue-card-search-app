@@ -1,11 +1,9 @@
 <template>
 <div class="home-menu">
-  <a class="home-menu-item" onclick="window.location ='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'">
-  <div >
+  <div class="home-menu-item" @click="downloadapp">
      <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
       <div class="home-menu-title">游戏下载</div>
   </div>
-  </a>
   <div class="home-menu-item">
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/bangzhushouce.png">
@@ -51,8 +49,9 @@
         name: "HomeMenu",
       methods:{
         downloadapp(){
-              window.location.href = "https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk";// 下载地址
-        }
+          console.log("aaa")
+          window.location.href='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'
+             }
       }
     }
 </script>
@@ -72,6 +71,7 @@
     margin-right: 10px;
   }
 .home-menu-item{
+  cursor:pointer ;
   box-shadow:0 2px 5px 0 rgba(102, 102, 102, 0.2);
   margin-top:3vw;
   border-radius: 8px;
