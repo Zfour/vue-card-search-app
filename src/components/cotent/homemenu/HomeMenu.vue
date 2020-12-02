@@ -27,15 +27,16 @@
     <img class="home-menu-img" src="~@/assets/img/home-menu/bianjiziliao.png">
     <div class="home-menu-title">DIY投稿</div>
   </div>
-    <!-- <div class="home-menu-item">
+    <div class="home-menu-item">
 
-       <img class="home-menu-img" src="~@/assets/img/home-menu/haoyou.png">
+       <img class="home-menu-img" @click="undercodding" src="~@/assets/img/home-menu/haoyou.png">
        <div class="home-menu-title">加入我们</div>
-     </div>-->
-  <div class="home-menu-item" @click="undercodding">
-    <img class="home-menu-img" src="~@/assets/img/home-menu/shanchu-01.png">
-    <div class="home-menu-title">BUG反馈</div>
-  </div>
+     </div>
+  <!--
+ <div class="home-menu-item" @click="undercodding">
+   <img class="home-menu-img" src="~@/assets/img/home-menu/shanchu-01.png">
+   <div class="home-menu-title">BUG反馈</div>
+ </div>-->
 
   </div>
 
@@ -46,7 +47,12 @@
         name: "HomeMenu",
       methods:{
         undercodding(){
-          alert("绝赞开发中...")
+          alert("如果你有足够的空闲时间，我们需要你！\n" +
+            "美工：能够按照要求绘制游戏卡面，精细程度参考杀戮尖塔，对画风没有要求。有过游戏美术经验最好。\n" +
+            "测试：不光是玩游戏而已，要能够按照要求测试游戏，截图，上传文件和填写网页表格。\n" +
+            "码农：工作内容是编写卡片和单元测试，只要有过编程经验学学就会，足够熟练之后可以担任程序。\n" +
+            "程序：要求接触过C#和Unity。\n" +
+            "如果你有兴趣且符合要求，请加入QQ群：957440521。期待你的加入！")
         },
         linktoqq(){
           window.location.href='http://wpa.qq.com/msgrd?v=3&uin=499984532&site=qq&menu=yes'
