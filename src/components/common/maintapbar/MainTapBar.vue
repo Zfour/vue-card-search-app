@@ -56,7 +56,7 @@
 
   .tapbar-name {
     margin-top: -3px;
-    font-size: 0.1em;
+    font-size: 12px;
   }
 
   #tap-bar {
