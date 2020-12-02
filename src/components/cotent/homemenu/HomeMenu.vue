@@ -1,9 +1,11 @@
 <template>
 <div class="home-menu">
-  <div class="home-menu-item" @click="downloadapp()">
-  <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
-  <div class="home-menu-title">游戏下载</div>
+  <a class="home-menu-item" onclick="window.location ='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'">
+  <div >
+     <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
+      <div class="home-menu-title">游戏下载</div>
   </div>
+  </a>
   <div class="home-menu-item">
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/bangzhushouce.png">
@@ -49,24 +51,16 @@
         name: "HomeMenu",
       methods:{
         downloadapp(){
-          if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-            window.open("CnSellersApp://");//ios app协议
-            window.setTimeout(function () {
-              window.location.href = "https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk";
-            }, 2000)
-          }
-          if (navigator.userAgent.match(/android/i)) {
-            window.open("sellingworldapp://");//android app协议
-            window.setTimeout(function () {
               window.location.href = "https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk";// 下载地址
-            }, 2000)
-          }
         }
       }
     }
 </script>
 
 <style scoped>
+  .home-menu-item-link{
+
+  }
   .home-menu{
     display: flex;
     height: 100%;
