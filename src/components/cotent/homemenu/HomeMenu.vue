@@ -4,12 +4,12 @@
      <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
       <div class="home-menu-title">游戏下载</div>
   </div>
-  <div class="home-menu-item">
+  <!--  <div class="home-menu-item">
 
-    <img class="home-menu-img" src="~@/assets/img/home-menu/bangzhushouce.png">
+ <img class="home-menu-img" src="~@/assets/img/home-menu/bangzhushouce.png">
     <div class="home-menu-title">更新日志</div>
   </div>
-  <!--<div class="home-menu-item">
+  <div class="home-menu-item">
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/kapian-01.png">
     <div class="home-menu-title">热门卡组</div>
@@ -20,22 +20,19 @@
     <div class="home-menu-title">排行榜</div>
   </div>-->
   <div class="home-menu-item">
-
-    <img class="home-menu-img" src="~@/assets/img/home-menu/bianjiziliao.png">
-    <div class="home-menu-title">DIY投稿</div>
-  </div>
-  <div class="home-menu-item">
-
     <img class="home-menu-img" @click="enterqqgroup" src="~@/assets/img/home-menu/xihuan-01.png">
     <div class="home-menu-title">交流群</div>
   </div>
-  <div class="home-menu-item">
-
-    <img class="home-menu-img" src="~@/assets/img/home-menu/haoyou.png">
-    <div class="home-menu-title">加入我们</div>
+  <div class="home-menu-item" @click="undercodding">
+    <img class="home-menu-img" src="~@/assets/img/home-menu/bianjiziliao.png">
+    <div class="home-menu-title">DIY投稿</div>
   </div>
-  <div class="home-menu-item">
+    <!-- <div class="home-menu-item">
 
+       <img class="home-menu-img" src="~@/assets/img/home-menu/haoyou.png">
+       <div class="home-menu-title">加入我们</div>
+     </div>-->
+  <div class="home-menu-item" @click="undercodding">
     <img class="home-menu-img" src="~@/assets/img/home-menu/shanchu-01.png">
     <div class="home-menu-title">BUG反馈</div>
   </div>
@@ -48,6 +45,9 @@
     export default {
         name: "HomeMenu",
       methods:{
+        undercodding(){
+          alert("绝赞开发中...")
+        },
         enterqqgroup(){
           window.location.href='https://jq.qq.com/?_wv=1027&k=8LhN0mVR'
         },

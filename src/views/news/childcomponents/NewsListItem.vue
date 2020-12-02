@@ -60,7 +60,7 @@
   .new-list-time{
     color: #cccccc;
     font-size: 14px;
-    margin-top: 20px;
+    margin-top: 0px;
   }
   .news-cell{
    margin: 10px 10px 20px 10px;

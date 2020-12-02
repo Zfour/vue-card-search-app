@@ -1,7 +1,7 @@
 <template>
     <div class="version">
-      <p>最近更新：2020年12月1日</p>
-      <p>版本号：V2.0.1</p>
+      <p>最近更新：2020年10月31日</p>
+      <p>版本号：0.7.29</p>
     </div>
 </template>
 
