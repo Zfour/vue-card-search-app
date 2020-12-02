@@ -50,8 +50,32 @@
       methods:{
         downloadapp(){
           console.log("aaa")
-          window.location.href='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'
-             }
+          var u = navigator.userAgent;
+          var ua = navigator.userAgent.toLowerCase();
+          var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Adr') > -1; //android终端
+          var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+          if(ua.match(/MicroMessenger/i)=="micromessenger") {   //微信内置浏览器+应用宝链接
+              //跳转到下载地址  这块我写的是安卓下载地址
+              window.location.href='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'
+          }else{
+            if(isiOS){
+
+                //跳转到ios下载地址
+                alert("暂不支持苹果手机进行游戏，请使用pc端进行游戏！")
+
+
+            }else if(isAndroid){
+
+                window.location.href='https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk'
+
+            }else{  //PC 端
+
+                window.location.href='https://thg.igsk.fun/download/'
+
+            }
+
+          }
+        }
       }
     }
 </script>
