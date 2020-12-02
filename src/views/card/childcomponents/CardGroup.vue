@@ -6,10 +6,10 @@
       <div class="card-group-info-title">
         <span style="font-weight: bold">{{item.name}}</span>
         <br>
-        <span style="font-size: 12px" >{{item.cardnum}}</span>
+        <span style="font-size: 12px" >{{"卡牌数：" + item.cardnum}}</span>
         <br>
 
-        <span style="font-size: 12px">{{item.skill}}</span>
+        <span style="font-size: 12px">{{"技能：" + item.skill}}</span>
         <br>
         <span style="font-size: 12px">消耗：{{item.cost}}</span>
 

@@ -70,13 +70,16 @@
       tabclick(index) {
         switch (index) {
           case 0:
-            this.currenttype = 'notice'
+            this.currenttype = 'notice';
+            this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
             break
           case 1:
-            this.currenttype = 'activity'
+            this.currenttype = 'activity';
+            this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
             break
           case 2:
-            this.currenttype = 'release'
+            this.currenttype = 'release';
+            this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
         }
       },
       gettype() {

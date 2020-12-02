@@ -1,9 +1,8 @@
 <template>
 <div class="home-menu">
-  <div class="home-menu-item">
-
-    <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
-    <div class="home-menu-title">游戏下载</div>
+  <div class="home-menu-item" @click="downloadapp">
+  <img class="home-menu-img" src="~@/assets/img/home-menu/xiazai-01.png">
+  <div class="home-menu-title">游戏下载</div>
   </div>
   <div class="home-menu-item">
 
@@ -47,7 +46,12 @@
 
 <script>
     export default {
-        name: "HomeMenu"
+        name: "HomeMenu",
+      methods:{
+        downloadapp(){
+          window.location.href="https://igsk.cdn.bigkeer.cn/thg/android/%E9%86%89%E6%A2%A6%E4%BC%A0%E8%AF%B4-latest.apk"
+        }
+      }
     }
 </script>
 
