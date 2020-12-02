@@ -48,6 +48,9 @@
         undercodding(){
           alert("绝赞开发中...")
         },
+        linktoqq(){
+          window.location.href='http://wpa.qq.com/msgrd?v=3&uin=1286303288&site=qq&menu=yes'
+        },
         enterqqgroup(){
           window.location.href='https://jq.qq.com/?_wv=1027&k=8LhN0mVR'
         },
