@@ -4,7 +4,7 @@
       <div slot="center">新闻</div>
     </nav-bar>
     <div class="news-nav-post-control">
-      <tab-control @tabclick="tabclick" :titles="['公告','活动','版本','更新']"></tab-control>
+      <tab-control @tabclick="tabclick" :titles="['新闻','活动','更新']"></tab-control>
     </div>
     <scroll :probe-type="3"
             :pull-up-load="true"
@@ -36,35 +36,25 @@
     components: {Scroll, BackToTop, NewsList, NavBar, TabControl},
     data() {
       return {
-        currenttype: 'notice',
+        currenttype: 'news',
         backtotopdisplay: false,
         newslist: {
           notice: {id: 515, page: 0, list: []},
           activity: {id: 511, page: 0, list: []},
           release: {id: 509, page: 0, list: []},
-          verson: {page: 0, list: [],content:'' },
+          verson: {name:"更新",id:4,page: 0, list: [],content:'' },
+          news: {name:"新闻",id:3,page: 0, list: [],content:'' },
+          activities: {name:"活动",id:5,page: 0, list: [],content:'' },
         }
       }
     },
     created() {
-      getThgNewsMutidata(4).then(
-        res =>{
-          console.log(res);
-          for(let item of res){
-            let reitem ={imgList:['https://thg.igsk.fun/wp-content/uploads/2020/05/53031871_p0.jpg'],title:''};
-            reitem.title=item.title.rendered;
-            reitem.content=item.content.rendered;
-            reitem.time=item.date.replace(/T/g," "),
-            //console.log(item.title)
-            this.newslist.verson.list.push(reitem);
-            console.log(this.newslist.verson)
-          }
-
-        }
-      );
-      this.getNewsData('notice');
-      this.getNewsData('activity');
-      this.getNewsData('release');
+      this.zmcsgetmessage(this.newslist.verson)
+      this.zmcsgetmessage(this.newslist.news)
+      this.zmcsgetmessage(this.newslist.activities)
+     //this.getNewsData('notice');
+     // this.getNewsData('activity');
+      //this.getNewsData('release');
     },
     computed: {
       switchtype() {
@@ -72,6 +62,20 @@
       }
     },
     methods: {
+      zmcsgetmessage(kind){
+        getThgNewsMutidata(kind.id).then(
+          res =>{
+            for(let item of res){
+              let reitem ={imgList:['https://thg.igsk.fun/wp-content/uploads/2020/05/53031871_p0.jpg'],title:''};
+              reitem.title=item.title.rendered;
+              reitem.content=item.content.rendered;
+              reitem.time=item.date.replace(/T/g," "),
+                //console.log(item.title)
+                kind.list.push(reitem);
+            }
+          }
+        );
+      },
       loadmore() {
         this.getNewsData(this.currenttype)
       },
@@ -87,19 +91,17 @@
       tabclick(index) {
         switch (index) {
           case 0:
-            this.currenttype = 'notice';
+            this.currenttype = 'news';
             this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
             break
           case 1:
-            this.currenttype = 'activity';
+            this.currenttype = 'activities';
             this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
             break
           case 2:
-            this.currenttype = 'release';
-            this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
-          case 3:
             this.currenttype = 'verson';
             this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
+            break
         }
       },
       gettype() {

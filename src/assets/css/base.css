@@ -59,4 +59,16 @@ a {
 .new-list-context ul{
   padding: 30px;
 }
-
+.new-list-context img{
+  padding: 20px 10px;
+  width: 100%;
+  height: 100%;
+}
+figcaption{
+  text-align: center;
+  padding: 5px;
+  font-weight: bold;
+}
+.new-list-context p{
+ line-height: 1.6em;
+}
