@@ -23,7 +23,7 @@
     <img class="home-menu-img" @click="enterqqgroup" src="~@/assets/img/home-menu/xihuan-01.png">
     <div class="home-menu-title">交流群</div>
   </div>
-  <div class="home-menu-item" @click="undercodding">
+  <div class="home-menu-item" @click="linktoqq">
     <img class="home-menu-img" src="~@/assets/img/home-menu/bianjiziliao.png">
     <div class="home-menu-title">DIY投稿</div>
   </div>
@@ -49,7 +49,7 @@
           alert("绝赞开发中...")
         },
         linktoqq(){
-          window.location.href='http://wpa.qq.com/msgrd?v=3&uin=1286303288&site=qq&menu=yes'
+          window.location.href='http://wpa.qq.com/msgrd?v=3&uin=499984532&site=qq&menu=yes'
         },
         enterqqgroup(){
           window.location.href='https://jq.qq.com/?_wv=1027&k=8LhN0mVR'
