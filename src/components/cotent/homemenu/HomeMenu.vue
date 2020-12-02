@@ -9,7 +9,7 @@
     <img class="home-menu-img" src="~@/assets/img/home-menu/bangzhushouce.png">
     <div class="home-menu-title">更新日志</div>
   </div>
-  <div class="home-menu-item">
+  <!--<div class="home-menu-item">
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/kapian-01.png">
     <div class="home-menu-title">热门卡组</div>
@@ -18,7 +18,7 @@
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/liebiao.png">
     <div class="home-menu-title">排行榜</div>
-  </div>
+  </div>-->
   <div class="home-menu-item">
 
     <img class="home-menu-img" src="~@/assets/img/home-menu/bianjiziliao.png">

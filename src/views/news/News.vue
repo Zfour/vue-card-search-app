@@ -4,7 +4,7 @@
       <div slot="center">新闻</div>
     </nav-bar>
     <div class="news-nav-post-control">
-      <tab-control @tabclick="tabclick" :titles="['公告','活动','版本']"></tab-control>
+      <tab-control @tabclick="tabclick" :titles="['公告','活动','版本','更新']"></tab-control>
     </div>
     <scroll :probe-type="3"
             :pull-up-load="true"
@@ -24,6 +24,7 @@
 
 <script>
   import {getNewsMutidata} from "../../network/news";
+  import {getThgNewsMutidata} from "../../network/zmcsnews"
   import TabControl from "../../components/cotent/tabcontrol/TabControl";
   import NavBar from "../../components/common/navbar/NavBar";
   import NewsList from "./childcomponents/NewsList";
@@ -40,11 +41,27 @@
         newslist: {
           notice: {id: 515, page: 0, list: []},
           activity: {id: 511, page: 0, list: []},
-          release: {id: 509, page: 0, list: []}
+          release: {id: 509, page: 0, list: []},
+          verson: {page: 0, list: [],content:'' },
         }
       }
     },
     created() {
+      getThgNewsMutidata(4).then(
+        res =>{
+          console.log(res);
+          for(let item of res){
+            let reitem ={imgList:['https://thg.igsk.fun/wp-content/uploads/2020/05/53031871_p0.jpg'],title:''};
+            reitem.title=item.title.rendered;
+            reitem.content=item.content.rendered;
+            reitem.time=item.date.replace(/T/g," "),
+            //console.log(item.title)
+            this.newslist.verson.list.push(reitem);
+            console.log(this.newslist.verson)
+          }
+
+        }
+      );
       this.getNewsData('notice');
       this.getNewsData('activity');
       this.getNewsData('release');
@@ -79,6 +96,9 @@
             break
           case 2:
             this.currenttype = 'release';
+            this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
+          case 3:
+            this.currenttype = 'verson';
             this.$refs.listscroll.Scroll.scrollTo(0, 0, 200);
         }
       },
