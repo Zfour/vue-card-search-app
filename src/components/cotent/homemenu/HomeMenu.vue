@@ -26,7 +26,7 @@
   </div>
   <div class="home-menu-item">
 
-    <img class="home-menu-img" src="~@/assets/img/home-menu/xihuan-01.png">
+    <img class="home-menu-img" @click="enterqqgroup" src="~@/assets/img/home-menu/xihuan-01.png">
     <div class="home-menu-title">交流群</div>
   </div>
   <div class="home-menu-item">
@@ -48,6 +48,9 @@
     export default {
         name: "HomeMenu",
       methods:{
+        enterqqgroup(){
+          window.location.href='https://jq.qq.com/?_wv=1027&k=8LhN0mVR'
+        },
         downloadapp(){
           console.log("aaa")
           var u = navigator.userAgent;
