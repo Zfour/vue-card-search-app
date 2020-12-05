@@ -2,7 +2,7 @@
   <div class="home">
   <nav-bar><div slot="center">醉梦传说助手</div></nav-bar>
     <scroll class="home-scroll" ref="homescroll">
-    <img-slider :cresult="result" ref="imageslider" @sliderImageLoadSuccess="refreshscroll"></img-slider>
+   <!-- <img-slider :cresult="result" ref="imageslider" @sliderImageLoadSuccess="refreshscroll"></img-slider>-->
     <div class="main-content">
     <version></version>
     <home-menu></home-menu>
